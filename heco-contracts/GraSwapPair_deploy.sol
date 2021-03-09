@@ -862,12 +862,12 @@ contract GraSwapPair is GraSwapPool, IGraSwapPair {
     function symbol() external override returns (string memory) {
         uint[5] memory proxyData;
         ProxyData.fill(proxyData, 4+32*(ProxyData.COUNT+0));
-        string memory s = "ETH";
+        string memory s = "HT";
         address stock = ProxyData.stock(proxyData);
         if(stock != address(0)) {
             s = IERC20(stock).symbol();
         }
-        string memory m = "ETH";
+        string memory m = "HT";
         address money = ProxyData.money(proxyData);
         if(money != address(0)) {
             m = IERC20(money).symbol();
